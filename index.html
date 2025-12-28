@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Набор в клан #ERRORs</title>
     <style>
+        :root {
+            /* базовый размер шрифта увеличен в 3 раза: 16px -> 48px */
+            font-size: 48px;
+        }
+
         body {
             background: linear-gradient(to bottom, #afff85, #6ddbb6);
             margin: 0;
@@ -14,16 +19,21 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            font-size: 16px;
         }
-        
+
+        /* контейнер для лёгкого сдвига вверх */
+        body > div {
+            transform: translateY(-15mm); /* сдвиг вверх на ~15 миллиметров */
+            /* сохраним относительную типографику: h1/p используют em */
+        }
+
         h1 {
-            font-size: 3em;
+            font-size: 3em; /* раньше: 3em от 16px -> 48px; теперь 3em от 48px -> 144px */
             margin: 10px 0;
         }
-        
+
         p {
-            font-size: 2em;
+            font-size: 2em; /* теперь 2em от 48px -> 96px */
             margin: 10px 0;
         }
     </style>
